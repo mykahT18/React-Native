@@ -16,16 +16,16 @@ const App = ({
   editItems,
   editingItem
 }) => (
-      <div className="App">
+      <View>
         <Header />
-        <div className="grid-x">
-          <div className="small-6 cell">
+        {/*<View className="grid-x">
+          <View className="small-6 cell">
             <Form add={addItems} />
-          </div>
-          <div className="small-6 cell">
+          </View>
+          <View className="small-6 cell">
             <List todos={todos} deleteItems={deleteItems} editItems={editItems} editingItem={editingItem} />
-          </div>
-        </div>
-      </div>
+          </View>
+        </View>*/}
+      </View>
     );
 export default App;

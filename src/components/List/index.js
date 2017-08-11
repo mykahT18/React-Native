@@ -6,17 +6,17 @@ import Item from '../Item'
 class List extends Component{
 	render(){
 		return(
-			<section>
-				<h1>My Shopping List</h1>
-				<ul>
+			<View>
+				<Text>My Shopping List</Text>
+				<View>
 					<Item 
 					todos={this.props.todos} 
 					deleteItems={this.props.deleteItems} 
 					editItems={this.props.editItems}
 					editingItem={this.props.editingItem}
 					/>
-				</ul>
-			</section>
+				</View>
+			</View>
 		)
 	}
 }

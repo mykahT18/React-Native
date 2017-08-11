@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { AppRegistry, StyleSheet, Text, View, Button } from 'react-native';
+import { AppRegistry, StyleSheet, Text, View, Button, TextInput } from 'react-native';
 
 
 class Item extends Component {
@@ -12,28 +12,26 @@ class Item extends Component {
 		let items = this.props.todos.todos
 		if(this.props.todos.isEditing){
 		return(
-				<div>
-					<li>
-						<input type="text" placeholder={this.item} ref="editName" defaultValue={this.item}/>
-						<button className="button li-btn" onClick={ () => this.props.editItems(this.index, this.refs.editName.value, false)}>Save</button>
-						<button className="button li-btn" onClick={ () => this.props.deleteItems()}>Delete</button>
-					</li>
-				</div>
+				<View>
+						<TextInput ref="editName" value={this.item}/>
+						<Button title="Save" onClick={ () => this.props.editItems(this.index, this.refs.editName.value, false)}/>
+						<Button title="Delete" onClick={ () => this.props.deleteItems()}/>
+				</View>
 			)
 		}
 		return(
-			<div>
+			<View>
 			{items.map((t, i)=> {
 				let boundItemClick = this.onItemClick.bind(this, t, i);
 				return(
-					<li key={i}>
+					<View key={i}>
 						{t.name} 
-						<button className="button li-btn" onClick={boundItemClick}>Edit</button>
-						<button className="button li-btn" onClick={ () => this.props.deleteItems(i)}>Delete</button>
-					</li>
+						<Button title="Edit" onClick={boundItemClick}/>
+						<Button title="Delete" onClick={ () => this.props.deleteItems(i)}/>
+					</View>
 				)
 			})}
-			</div>
+			</View>
 		)
 	}
 	onItemClick(item, i){
