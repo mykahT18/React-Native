@@ -13,13 +13,15 @@ class Item extends Component {
 		if(this.props.todos.isEditing){
 		return(
 				<View>
-						<TextInput 
-							ref="editName"
-						 	// value={this.item}
-							onChangeText= {(input) => this.itemValue = input}
-						 />
-						<Button title="Save" onPress={ () => this.props.editItems(this.index, this.itemValue, false)}/>
-						<Button title="Delete" onPress={ () => this.props.deleteItems(this.index)}/>
+					<Text>You are editing {this.item}</Text>
+					<TextInput 
+						ref="editName"
+					 	style={syles.textInput}
+						onChangeText= {(input) => this.itemValue = input}
+						style={{backgroundColor: "#D6D6D6", marginLeft: 5, marginRight: 5}}
+					 />
+					<Button title="Save" onPress={ () => this.props.editItems(this.index, this.itemValue, false)}/>
+					<Button title="Delete" onPress={ () => this.props.deleteItems(this.index)}/>
 				</View>
 			)
 		}
@@ -55,5 +57,10 @@ const styles = StyleSheet.create({
     margin: 10,
     alignItems: 'center',
     justifyContent: 'center',
- }
+ },
+ textInput:{
+ 		borderColor: "#3A3E4B",
+    borderWidth: 1,
+    padding: 5
+  }
 });

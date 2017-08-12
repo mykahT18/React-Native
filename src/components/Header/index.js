@@ -17,7 +17,7 @@ export default Header;
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: '#26A69A',
+    backgroundColor: '#E6E6E6',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -25,6 +25,6 @@ const styles = StyleSheet.create({
 		marginTop: 20,
 		marginBottom: 10,
 		fontWeight: "bold",
-		color: "#E1F5E8"
+		color: "#3A3E4B"
   }
 });

@@ -26,7 +26,7 @@ class Form extends Component{
 		return(
 			<View>
 				<KeyboardAvoidingView behavior="padding" style={styles.formContainer}>
-						<Text>Add New Item</Text>
+						<Text style={{fontWeight: "bold", margin: 5, fontSize: 20}}>Add New Item</Text>
 						<Text>Item Name</Text>
 						<TextInput 
 							style={styles.textInput} 
@@ -41,19 +41,24 @@ class Form extends Component{
 export default Form
 const styles = StyleSheet.create({
   formContainer: {
-    backgroundColor: '#D6D6D6',
+    backgroundColor: '#FEFEFE',
     margin: 10,
     alignItems: 'center',
     justifyContent: 'center',
+    borderColor: "#3A3E4B",
+    borderWidth: StyleSheet.hairlineWidth
   },
   textArea:{
 		marginTop: 20,
 		marginBottom: 10,
 		fontWeight: "bold",
-		color: "#E1F5E8"
+		color: "#E1F5E8",
   },
   textInput:{
 		backgroundColor: "#fff",
-		width: 300
+		width: 300,
+		borderColor: "#3A3E4B",
+    borderWidth: 1,
+    padding: 5
   }
 });
