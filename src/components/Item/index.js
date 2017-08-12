@@ -13,9 +13,13 @@ class Item extends Component {
 		if(this.props.todos.isEditing){
 		return(
 				<View>
-						<TextInput ref="editName" value={this.item}/>
-						<Button title="Save" onClick={ () => this.props.editItems(this.index, this.refs.editName.value, false)}/>
-						<Button title="Delete" onClick={ () => this.props.deleteItems()}/>
+						<TextInput 
+							ref="editName"
+						 	// value={this.item}
+							onChangeText= {(input) => this.itemValue = input}
+						 />
+						<Button title="Save" onPress={ () => this.props.editItems(this.index, this.itemValue, false)}/>
+						<Button title="Delete" onPress={ () => this.props.deleteItems(this.index)}/>
 				</View>
 			)
 		}
@@ -24,10 +28,10 @@ class Item extends Component {
 			{items.map((t, i)=> {
 				let boundItemClick = this.onItemClick.bind(this, t, i);
 				return(
-					<View key={i}>
-						<Text>{t.name}</Text>
-						<Button title="Edit" onClick={boundItemClick}/>
-						<Button title="Delete" onClick={ () => this.props.deleteItems(i)}/>
+					<View key={i} style={styles.itemContainer}>
+						<Text style={{marginTop: 3, marginBottom: 3}}>{t.name}</Text>
+						<Button title="Edit" onPress={boundItemClick}/>
+						<Button title="Delete" onPress={ () => this.props.deleteItems(i)}/>
 					</View>
 				)
 			})}
@@ -43,3 +47,13 @@ class Item extends Component {
 
 }
 export default Item
+
+
+const styles = StyleSheet.create({
+  itemContainer: {
+    backgroundColor: '#D6D6D6',
+    margin: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+ }
+});
