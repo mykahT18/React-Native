@@ -25,7 +25,7 @@ class Item extends Component {
 				let boundItemClick = this.onItemClick.bind(this, t, i);
 				return(
 					<View key={i}>
-						{t.name} 
+						<Text>{t.name}</Text>
 						<Button title="Edit" onClick={boundItemClick}/>
 						<Button title="Delete" onClick={ () => this.props.deleteItems(i)}/>
 					</View>

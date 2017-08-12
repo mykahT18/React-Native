@@ -7,13 +7,13 @@ class List extends Component{
 	render(){
 		return(
 			<View>
-				<Text>My Shopping List</Text>
+				<Text style={{marginTop: 10, textAlign: "center"}}>My Shopping List</Text>
 				<View>
 					<Item 
-					todos={this.props.todos} 
-					deleteItems={this.props.deleteItems} 
-					editItems={this.props.editItems}
-					editingItem={this.props.editingItem}
+						todos={this.props.todos} 
+						deleteItems={this.props.deleteItems} 
+						editItems={this.props.editItems}
+						editingItem={this.props.editingItem}
 					/>
 				</View>
 			</View>

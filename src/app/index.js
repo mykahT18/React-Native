@@ -18,14 +18,20 @@ const App = ({
 }) => (
       <View>
         <Header />
-        {/*<View className="grid-x">
-          <View className="small-6 cell">
+        <View>
+          <View style={styles.wrapper}>
             <Form add={addItems} />
           </View>
-          <View className="small-6 cell">
+          <View>
             <List todos={todos} deleteItems={deleteItems} editItems={editItems} editingItem={editingItem} />
           </View>
-        </View>*/}
+        </View>
       </View>
     );
 export default App;
+const styles = StyleSheet.create({
+  wrapper: {
+    borderBottomWidth: 2,
+    borderBottomColor: "#3A3E4B",
+  }
+});

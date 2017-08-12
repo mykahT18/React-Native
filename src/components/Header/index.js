@@ -6,7 +6,7 @@ class Header extends Component{
 	render(){
 		return(
 			<View>
-	  		<View style={styles.container}>
+	  		<View style={styles.header}>
 		    	<Text style={styles.textArea}>Shopping</Text>
   			</View>
 			</View>
@@ -16,13 +16,15 @@ class Header extends Component{
 export default Header;
 
 const styles = StyleSheet.create({
-  container: {
+  header: {
     backgroundColor: '#26A69A',
     alignItems: 'center',
     justifyContent: 'center',
   },
   textArea:{
 		marginTop: 20,
-		marginBottom: 10
+		marginBottom: 10,
+		fontWeight: "bold",
+		color: "#E1F5E8"
   }
 });
