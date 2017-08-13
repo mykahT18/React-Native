@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View, Button } from 'react-native';
+import { AppRegistry, StyleSheet, Text, View, Button} from 'react-native';
 
 
 class Header extends Component{
